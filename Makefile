@@ -6,13 +6,13 @@ work_dir_set := $(shell pwd)/set
 
 # Builds up the Parrot OS - Core
 build-core:
-	cd core/ && docker build -t parrot-core -f Dockerfile .
+	cd core/ && DOCKER_BUILDKIT=1 docker build -t parrot-core -f Dockerfile .
 
 # Run Parrot OS - Core
 run-core:
 	docker run -it --rm --privileged --workdir /usr --network host -v  $(work_dir):/core  --name parrot-core kali /bin/bash
 	#Example with the --network host turned off
-	#docker run -it -p 87:8087 --rm --privileged --workdir /usr -v  $(work_dir):/security  --name parot-core kali /bin/bash
+	#docker run -it -p 87:8087 --rm --privileged --workdir /usr -v  $(work_dir):/security  --name parrot-core kali /bin/bash
 
 # Scan for vuln. in Parrot OS Core Docker Image
 core-scan:
@@ -24,18 +24,17 @@ core-stats:
 	docker stats -a parrot-core
 
 
-
 ##############  PARROT OS - SECURITY
 
 # Builds up the Parrot OS - Security
 build-security:
-	cd core/ && docker build -t parrot-security -f Dockerfile . 
+	cd core/ && DOCKER_BUILDKIT=1 docker build -t parrot-security -f Dockerfile . 
 
 # Run Parrot OS - Security
 run-security:
 	docker run -it --rm --privileged --workdir /usr --network host -v  $(work_dir):/security  --name parrot-core kali /bin/bash
 	#Example with the --network host turned off
-	#docker run -it -p 87:8087 --rm --privileged --workdir /usr -v  $(work_dir):/security  --name parot-core kali /bin/bash
+	#docker run -it -p 87:8087 --rm --privileged --workdir /usr -v  $(work_dir):/security  --name parrot-core kali /bin/bash
 
 # Scan for vuln. in Parrot OS Security Docker Image
 core-scan:
@@ -45,7 +44,6 @@ core-scan:
 
 core-stats:
 	docker stats -a parrot-core
-
 
 
 ############## PARROT - OS - Individual tools
