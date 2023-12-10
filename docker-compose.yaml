@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+
+  core:
+    build:
+      dockerfile: Dockerfile
+      context: ./core
+    #image: 'parrotsec/core'
+    container_name: parrot-os-core
+    restart: always
+    privileged: true   # Add the privileged option, SYS_ADMIN is limited, where privileged has full access
+    working_dir: /usr
+    network_mode: host
+    volumes:
+      - ${PWD}:/core
+    stdin_open: true
+    tty: true
+    command: /bin/bash
+
+  security:
+    build:
+      dockerfile: Dockerfile
+      context: ./security
+    #image: 'parrotsec/security'
+    container_name: parrot-os-security
+    restart: always
+    privileged: true   # Add the privileged option, SYS_ADMIN is limited, where privileged has full access
+    working_dir: /usr
+    network_mode: host
+    volumes:
+      - ${PWD}:/security
+    stdin_open: true
+    tty: true
+    command: /bin/bash
