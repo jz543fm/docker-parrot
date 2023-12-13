@@ -2,7 +2,7 @@
 
 [ParrotOS Official Doc](https://parrotsec.org/docs/)
 
-Parrot OS (Core/Security) or just Parrot Tools  in Docker with the usage of Makefile, Dockefiles and `docker-compose.yaml` for Bug Bounty, Penetration Testing, Security Research, Computer Forensics and Reverse Engineering.
+Parrot OS (Core/Security) or just Parrot Tools  in Docker with the usage of Makefile, Dockefiles and `docker-compose.yaml` for Bug Bounty, Penetration Testing, Security Research, Computer Forensics and Reverse Engineering. Repository also contains Proof of Concept with kind (Kubernetes in Docker) to test Parrot OS in Docker.
 
 For the further details how it works read the `Makefile`
 
@@ -95,4 +95,24 @@ make rmrf
 make prune
 # Docker volume prune
 make volume-prune
+```
+
+## Deployment
+
+Local cluster with [Kind](http://kind.sigs.k8s.io) - (K8s in Docker):
+
+```bash
+# Creates kind cluster, 1 master + 2 worker nodes
+make cc
+# Deletes kind cluster
+make dc
+```
+
+Apply manifest for Parrot OS Core/Security:
+
+```bash
+# Parrot OS Core
+kubectl apply -f core/deploy/deploy.yaml
+# Parrot OS Security
+kubectl apply -f core/security/deploy.yaml
 ```

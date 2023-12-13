@@ -37,12 +37,12 @@ run-security:
 	#docker run -it -p 87:8087 --rm --privileged --workdir /usr -v  $(work_dir):/security  --name parrot-core kali /bin/bash
 
 # Scan for vuln. in Parrot OS Security Docker Image
-core-scan:
+security-scan:
 	trivy image parrot-security
 
 # Docker stats for Parrot OS Security Docker Image
 
-core-stats:
+security-stats:
 	docker stats -a parrot-core
 
 
@@ -94,3 +94,13 @@ prune:
 # Docker volume prune, removes all unused volumes
 volume-prune:
 	docker volume prune -f
+
+##############  K8s - Kind cluster
+
+cc:
+	kind create cluster --config=kind/config.yaml
+
+# Deletes Kind cluster
+
+dc:
+	kind delete cluster

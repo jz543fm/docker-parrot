@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: parrot-securty
+  name: parrot-security
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parrot-security
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: parrot-security
+    spec:
+      containers:
+      - image: lostcauze7/parrot-security
+        name: parrot-security
+        imagePullPolicy: Always
+        command: ["/bin/sleep", "3650d"]
+        resources: {}

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: parrot-core
+  name: parrot-core
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parrot-core
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: parrot-core
+    spec:
+      containers:
+      - image: lostcauze7/parrot-core
+        name: parrot-core
+        imagePullPolicy: Always
+        command: ["/bin/sleep", "3650d"]
+        resources: {}
