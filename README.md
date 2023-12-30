@@ -6,6 +6,10 @@ Parrot OS (Core/Security) or just Parrot Tools  in Docker with the usage of Make
 
 For the further details how it works read the `Makefile`
 
+***!!! I am using Docker host network driver, please remember that: The host networking driver only works on Linux hosts, and is not supported on Docker Desktop for Mac, Docker Desktop for Windows, or Docker EE for Windows Server !!! The usage of the host network driver is to optimize performance or to use that in a situation where container needs to handle a wide large range of ports***
+
+***If you want to run this project on the Mac, Windows, Windows server please remove from all commands --network host!!!***
+
 ## Installation of Trivy
 
 [Trivy](https://trivy.dev) installation for Docker Image vulnerabilities:
