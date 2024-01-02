@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: parrot-core-systemd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parrot-core
+  template:
+    metadata:
+      labels:
+        app: parrot-core
+    spec:
+      containers:
+      - name: parrot-core
+        image: lostcauze7/parrot-core-systemd
+        ports:
+        - containerPort: 8087
+        securityContext:
+          privileged: true
+        workingDir: /usr
+        command:
+        - "/bin/bash"
+        - "/docker-entrypoint.sh"
+        - "tail"
+        - "-f"
+        - "/dev/null"
+        stdin: true
+        tty: true
