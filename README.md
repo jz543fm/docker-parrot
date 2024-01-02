@@ -139,23 +139,3 @@ make prune
 # Docker volume prune
 make volume-prune
 ```
-
-## Deployment
-
-Local cluster with [Kind](http://kind.sigs.k8s.io) - (K8s in Docker):
-
-```bash
-# Creates kind cluster, 1 master + 2 worker nodes
-make cc
-# Deletes kind cluster
-make dc
-```
-
-Apply manifest for Parrot OS Core/Security:
-
-```bash
-# Parrot OS Core
-kubectl apply -f core/deploy/deploy.yaml
-# Parrot OS Security
-kubectl apply -f core/security/deploy.yaml
-```
