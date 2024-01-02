@@ -22,6 +22,15 @@ For the further details how it works read the `Makefile`
 
 ## Deployment for Kubernetes
 
+Local cluster with [Kind](http://kind.sigs.k8s.io) - (K8s in Docker):
+
+```bash
+# Creates kind cluster, 1 master + 2 worker nodes
+make cc
+# Deletes kind cluster
+make dc
+```
+
 ### Without enabled systemd:
 
 ```bash
