@@ -20,6 +20,8 @@ spec:
       containers:
       - image: lostcauze7/parrot-security
         name: parrot-security
+        ports:
+        - containerPort: 8087
         imagePullPolicy: Always
         command: ["/bin/sleep", "3650d"]
         resources: {}
