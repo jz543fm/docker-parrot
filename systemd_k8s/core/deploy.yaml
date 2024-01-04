@@ -6,14 +6,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: parrot-core
+      app: parrot-core-s
   template:
     metadata:
       labels:
-        app: parrot-core
+        app: parrot-core-s
     spec:
       containers:
-      - name: parrot-core
+      - name: parrot-core-s
         image: lostcauze7/parrot-core-systemd
         ports:
         - containerPort: 8088

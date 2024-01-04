@@ -6,14 +6,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: parrot-sec
+      app: parrot-sec-s
   template:
     metadata:
       labels:
-        app: parrot-sec
+        app: parrot-sec-s
     spec:
       containers:
-      - name: parrot-sec
+      - name: parrot-sec-s
         image: lostcauze7/parrot-sec-systemd
         ports:
         - containerPort: 8087
