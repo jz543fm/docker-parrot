@@ -33,12 +33,10 @@ core-s-scan:
 	trivy image parrot-core-systemd
 
 # Docker stats for Parrot OS Core Docker Image
-
 core-stats:
 	docker stats -a parrot-core
 
 # Docker stats for Parrot OS Core systemd Docker Image
-
 core-s-stats:
 	 docker stats -a parrot-core-systemd
 
@@ -46,7 +44,6 @@ core-s-stats:
 
 # Builds up the Parrot OS - Security
 build-security:
-	
 	cd core/ && DOCKER_BUILDKIT=1 docker build -t parrot-security -f Dockerfile . 
 
 # Builds up the Parrot OS - Core - systemd
@@ -74,12 +71,10 @@ security-s-scan:
 	trivy image parrot-security-systemd
 
 # Docker stats for Parrot OS Security Docker Image
-
 security-stats:
 	docker stats -a parrot-security
 
 # Docker stats for Parrot OS Security systemd Docker Image
-
 security-s-stats:
 	docker stats -a parrot-security-systemd
 
