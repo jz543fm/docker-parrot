@@ -94,20 +94,36 @@ I am using Docker Buildkit, check the `script.sh` and run it `sudo su -; ./scrip
 ```bash
 # Builds up the Parrot OS - Core
 make build-core
+# Builds up the Parrot OS - Core with systemd
+make build-core-systemd
 # Run Parrot OS - Core
 make run-core
+# Run Parrot OS - Core with systemd
+make run-core-s
 # Scan for vuln. in Parrot OS Core Docker Image
 make core-scan
+# Scan for vuln. in Parrot OS Core with Docker Image with systemd
+make core-s-scan
 # Docker stats for Parrot OS Core Docker Image
 make core-stats
+# Docker stats for Parrot OS Core Docker Image with systemd
+make core-s-stats
 # Builds up the Parrot OS - Security
 make build-security
+# Builds up the Parrot OS - Security with systemd
+make build-security-systemd
 # Run Parrot OS - Security
 make run-security
+# Run Parrot OS - Security with systemd
+make run-security-s
 # Scan for vuln. in Parrot OS Security Docker Image
-make core-scan
+make security-scan
+# Scan for vuln. in Parrot OS Security Docker Image with systemd
+make security-s-scan
 # Docker stats for Parrot OS Security Docker Image
-make core-stats
+make security-stats
+# Docker stats for Parrot OS Security Docker Image with systemd
+make security-s-stats
 # Run Parrot Tools Docker image (read Makefile) - Nmap
 make nmap
 # Run Parrot Tools Docker image (read Makefile) - metasploit 
