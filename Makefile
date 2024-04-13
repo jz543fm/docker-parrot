@@ -6,11 +6,11 @@ work_dir_set := $(shell pwd)/set
 
 # Builds up the Parrot OS - Core
 build-core:
-	cd core/ && DOCKER_BUILDKIT=1 docker build -t parrot-core -f Dockerfile .
+	cd core/ && docker build -t parrot-core -f Dockerfile .
 
 # Builds up the Parrot OS - Core - Systemd
 build-core-systemd:
-	cd systemd_k8s/core/ && DOCKER_BUILDKIT=1 docker build -t parrot-core-systemd -f Dockerfile .
+	cd systemd_k8s/core/ && docker build -t parrot-core-systemd -f Dockerfile .
 
 # Run Parrot OS - Core
 run-core:
@@ -44,11 +44,11 @@ core-s-stats:
 
 # Builds up the Parrot OS - Security
 build-security:
-	cd core/ && DOCKER_BUILDKIT=1 docker build -t parrot-security -f Dockerfile . 
+	cd core/ && docker build -t parrot-security -f Dockerfile . 
 
 # Builds up the Parrot OS - Core - systemd
 build-security-systemd:
-	cd systemd_k8s/security/ && DOCKER_BUILDKIT=1 docker build -t parrot-security-systemd -f Dockerfile .
+	cd systemd_k8s/security/ && docker build -t parrot-security-systemd -f Dockerfile .
 
 # Run Parrot OS - Security
 run-security:

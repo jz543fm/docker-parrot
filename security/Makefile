@@ -1,5 +1,5 @@
 build:
-	 DOCKER_BUILDKIT=1 docker build  -t parrot-security .
+	docker build  -t parrot-security .
 
 exec:
 	docker run -it -u root parrot-security bash

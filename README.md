@@ -89,8 +89,6 @@ docker compose version #verify
 
 ## Local development
 
-I am using Docker Buildkit, check the `script.sh` and run it `sudo su -; ./script.sh`, it will set up Docker Buildkit and restarts Docker system service. 
-
 ```bash
 # Builds up the Parrot OS - Core
 make build-core

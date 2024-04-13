@@ -1,5 +1,5 @@
 build:
-	 DOCKER_BUILDKIT=1 docker build  -t parrot-core .
+	docker build  -t parrot-core .
 
 exec:
 	docker run -it -u root parrot-core bash
